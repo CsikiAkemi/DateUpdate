@@ -4,6 +4,8 @@
  */
 package hangmangame;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author sisin
@@ -275,19 +277,26 @@ int w=0;
         int w1=Integer.parseInt(jLab_W.getText());
         valasz3.setEnabled(false);
         valasz4.setEnabled(false);
+        alja.setVisible(true);
+        kozepe.setVisible(true);
+        teteje.setVisible(true);
         //Ha ezek már látaszódnak ha 3 rossz válasz volt akkor ezek jhelenítődnek meg
         if(V4.equals(Jvalasz4)){
            jLab_W.setText(""+w1);
-           alja.setVisible(true);
-           kozepe.setVisible(true);
-           teteje.setVisible(true);
            aember.setVisible(false);
            bember.setVisible(true);
-          
+           TheGame g=new TheGame();
+                g.setVisible(false);
+                g.dispose();
            
+        if(w1 < 1){
+         bember.setVisible(true);
+         
         }
+           
+       
         //rosz válasznál ezek megjelnítődnek
-        else {
+        }  else {
            w1=w1+1;
            jLab_W.setText(""+w1);
            alja.setVisible(true);
@@ -295,10 +304,32 @@ int w=0;
            teteje.setVisible(true);
            fember.setVisible(true);
            aember.setVisible(false);
+           TheGame g=new TheGame();
+                g.setVisible(false);
+                g.dispose();
         }
+        if(w1 == 0){
+    
+                
+                
+                System.out.println("Szuper vagy 10% kedvezmény. NYERTÉL");
+                
        
-       
-       
+        }else{
+            System.out.println("Vesztettél");
+                TheGame g=new TheGame();
+                g.setVisible(false);
+                g.dispose();
+                ToLose tl=new ToLose();
+                tl.setVisible(true);
+               
+                 //JFrame TheGame = new JFrame("Exit on Close Example");
+                
+                //g.setDefaultCloseOperation(TheGame.EXIT_ON_CLOSE);
+                //TheGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
+     
+        
     }//GEN-LAST:event_valasz4ActionPerformed
 
     /**

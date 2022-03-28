@@ -20,7 +20,7 @@ public class HangManGame {
     public static void main(String[] args) {
         // TODO code application logic here
         
-                new login().setVisible(true);
+                //new login().setVisible(true); Azért hogy ne kelljen újra meg újra bejelentkezni a teszteléshez
                 
     }
     
